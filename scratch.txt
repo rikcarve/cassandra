@@ -1,1 +1,8 @@
 
+ALTER KEYSPACE videodb4
+WITH REPLICATION = { 
+  'class' : 'NetworkTopologyStrategy',
+  'DC00002' : 3 };
+
+nodetool getendpoints videodb4 videos_by_tag 'chaos'
+
